@@ -17,12 +17,12 @@ public class Daisy {
     // Constructor
     public Daisy(Color daisyColor, int age) {
         DaisyColor = daisyColor;
-        this.age = age;
         if( daisyColor == Color.BLACK){
             this.albedo = Params.BLACK_ALBEDO;
         }else{
             this.albedo = Params.WHITE_ALBEDO;
         }
+        this.age = age;
     }
 
     // getter and setter
