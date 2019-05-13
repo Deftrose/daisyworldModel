@@ -31,7 +31,7 @@ public class Patch {
         this.temperature = temperature;
     }
 
-    /*
+    /**
             This method could calculate the temperature of this patch
             The current temperature is based on the initial temperature and the luminosity it absorb
             The heat could be calculated from: heat = ( 1 - current albedo)* solar_luminosity
@@ -61,7 +61,7 @@ public class Patch {
          temperature = ( heat + temperature )/2 ;
      }
 
-     /*
+     /**
         This method is used to decide whether the daisy in this patch live, die or reproduce
         In each time tick, the patch would check the daisy's age and decide whether it lives on
         if the daisy in this patch could live, then calculate the probability of reproduction to a neighbor patch
