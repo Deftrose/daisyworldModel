@@ -1,9 +1,15 @@
 import java.util.Random;
 
+/**
+ * This World Class is used to model the daisy world which contains
+ * an field of patches. Daisies would be planted on those daisies.
+ *
+ * The tick method would model how would each state change though a fixed time period
+ */
 public class World {
 
-    public double globalTemp ;
-    public Patch[][] patches ;
+    private double globalTemp ;
+    private Patch[][] patches ;
 
     public World(){
         /*
@@ -21,6 +27,12 @@ public class World {
         }*/
     }
 
+    // Setter for global temperature
+    public double getGlobalTemp() {
+        return globalTemp;
+    }
+
+    // How state transform to another state
     public void tick(){
 
             // Check all the patches, if the daisy on a patch would alive and reproduce
