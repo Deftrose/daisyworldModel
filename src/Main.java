@@ -1,3 +1,5 @@
+import java.io.FileWriter;
+import java.io.IOException;
 
 public class Main{
 
@@ -5,8 +7,17 @@ public class Main{
 
         World daisyWorld = new World();
 
-        for(int i=0 ; i< 50 ; i++ ){
-            daisyWorld.tick();
+        try{
+            FileWriter writer = new FileWriter("result.csv");
+            for(int i=0 ; i< 400 ; i++ ){
+                daisyWorld.tick();
+                writer.append(String.valueOf(daisyWorld.globalTemp + "," +"\n"));
+            }
+
+            writer.close();
+        } catch (IOException e){
+
         }
+
     }
 }

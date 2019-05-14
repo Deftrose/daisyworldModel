@@ -54,7 +54,7 @@ public class Patch {
          //and an absorbed-luminosity of .5 yields a heating of approximately 30 C
          //and a absorbed-luminosity of 0.01 yields a =heating of approximately -273 C
          if( luminosity > 0){
-             heat = 72 * (Math.log10(luminosity)) + 80 ;
+             heat = 72 * (Math.log(luminosity)) + 80 ;
          }else{
              heat = 80;
          }

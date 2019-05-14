@@ -8,9 +8,9 @@
 public class Params {
 
     // The max size of the world
-    final static int MAX_X = 10;
+    final static int MAX_X = 11;
 
-    final static int MAX_Y = 10;
+    final static int MAX_Y = 11;
 
     // The albedo of Black daisy
     final static double BLACK_ALBEDO = 0.25;
@@ -22,7 +22,7 @@ public class Params {
     final static double SUR_ALBEDO = 0.4;
 
     // Solar luminosity
-    final static double SOLAR_LUMINOSITY = 1.0;
+    final static double SOLAR_LUMINOSITY = 1;
 
     // The max age of daisy
     final static int AGE_MAX = 25;

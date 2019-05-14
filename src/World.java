@@ -55,14 +55,14 @@ public class World {
         int temp_x,temp_y;
         Patch tempPatch ;
 
-        for(int i=0 ; i< Params.MAX_X ; i++){
-            for(int m=0 ; m< Params.MAX_Y ; m++){
-                patches[i][m] = new Patch(null, Params.INIT_TEMP);
+        for(int x=0 ; x< Params.MAX_X ; x++){
+                for(int y=0 ; y< Params.MAX_Y ; y++){
+                patches[x][y] = new Patch(null, Params.INIT_TEMP);
             }
         }
 
         // plant the white daisies
-        for(int i =0; i < (Params.WHITE_DAISY * Params.MAX_X * Params.MAX_Y ) ; i++ ){
+        for(int i =0; i < ( (int) (Params.WHITE_DAISY * Params.MAX_X * Params.MAX_Y) ) ; i++ ){
             // only plant daisies where there is no daisy
             do{
                 temp_x = random.nextInt(Params.MAX_X);
@@ -73,7 +73,7 @@ public class World {
         }
 
         // plant the black daisies
-        for(int i =0; i< (Params.BLACK_DAISY * Params.MAX_X * Params.MAX_Y ) ; i++){
+        for(int i =0; i< ( (int)(Params.BLACK_DAISY * Params.MAX_X * Params.MAX_Y) ) ; i++){
             // only plant daisies where there is no daisy
             do{
                 temp_x = random.nextInt(Params.MAX_X);
@@ -97,9 +97,9 @@ public class World {
                 if(!ex_condition){
                     // the energy would be absorbed by this one
                     patches[location_x][location_y].setTemperature( patches[location_x][location_y].getTemperature()
-                            + patches[x][y].getTemperature()/16 );
+                            + patches[x][y].getTemperature() * Params.DIFUSE_PARAM / 8 );
                     // the neighbor would give out 1/16 of its energy
-                    patches[x][y].setTemperature( patches[x][y].getTemperature()* 15 /16 );
+                    patches[x][y].setTemperature( patches[x][y].getTemperature()* (1 - Params.DIFUSE_PARAM / 8) );
                 }
             }
         }
@@ -124,7 +124,7 @@ public class World {
                 boolean canReproduce = true;
                 canReproduce = patches[x][y].checkSurviability();
                 if(canReproduce){
-                    Daisy newDaisy = new Daisy( patches[x][y].getDaisy().getDaisyColor(),1);
+                    Daisy newDaisy = new Daisy( patches[x][y].getDaisy().getDaisyColor(),0);
                     if(Neighbor.getRandomEmptyNeighbor(x,y,patches)!= null)
                         Neighbor.getRandomEmptyNeighbor(x,y,patches).setDaisy(newDaisy);
                 }

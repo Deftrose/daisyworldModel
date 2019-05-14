@@ -1,3 +1,8 @@
+/**
+ *  This is the daisy class who has its color and age
+ *  Black and white daisy would have different albedo
+ *
+ */
 public class Daisy {
 
     public enum Color{
