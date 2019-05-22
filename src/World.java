@@ -10,6 +10,8 @@ public class World {
 
     private double globalTemp ;
     private Patch[][] patches ;
+    private int white_num;
+    private int black_num;
 
     public World(){
         /*
@@ -35,6 +37,10 @@ public class World {
     // How state transform to another state
     public void tick(){
 
+            // Reset the daisy counter
+            white_num = 0;
+            black_num = 0;
+
             // Check all the patches, if the daisy on a patch would alive and reproduce
             checkAlive(patches);
 
@@ -55,7 +61,23 @@ public class World {
             // Set the global temperature
             globalTemp = setGlobalTemper(patches);
 
-            System.out.println(globalTemp);
+            // Calculate the number of white and black daisy
+            for(int x=0; x< Params.MAX_X; x++){
+                for(int y=0; y< Params.MAX_Y; y++){
+                    if(patches[x][y].getDaisy() != null){
+                        switch (patches[x][y].getDaisy().getDaisyColor()){
+                            case BLACK :
+                                black_num ++; break;
+                            case WHITE :
+                                white_num ++; break;
+                        }
+                    }
+                }
+            }
+
+            //System.out.println(globalTemp);
+            System.out.println(white_num);
+            //System.out.println(black_num);
         }
 
 

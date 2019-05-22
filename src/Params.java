@@ -22,7 +22,7 @@ public class Params {
     static double SUR_ALBEDO = 0.4;
 
     // Solar luminosity
-    static double SOLAR_LUMINOSITY = 1;
+    static double SOLAR_LUMINOSITY = 0.8;
 
     // The max age of daisy
     static int AGE_MAX = 25;

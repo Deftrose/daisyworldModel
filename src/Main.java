@@ -12,7 +12,7 @@ public class Main{
 
         // the MAX_TIME const would define how many time periods would this model
         // run in an experiment.
-        final int MAX_TIME = 500;
+        final int MAX_TIME = 1000;
 
 
         World daisyWorld = new World();
@@ -35,9 +35,9 @@ public class Main{
     /**
      * This method is used to preset the parameters. It could also been done manually.
      * However, that would require to change the value, run and repeat. This method would
-     * make this process done multiple times with running once.
+     * make this process done multiple times with running this program once.
      *
-     * In this way, the solar luminosity should be a fixed value
+     * In this method, the solar luminosity should be a fixed value
      * if need to get a experiment of changing solar luminosity
      * use method changingSolarSetting
      */
