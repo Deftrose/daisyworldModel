@@ -5,6 +5,12 @@ import java.io.IOException;
  * Main Class bring each component together and print out the result of experiment as cvs file
  *
  * Use the preSetting method to preset some parameters and the main method would run the experiment and print it.
+ *
+ *  Author:
+ *  Bowen Bai
+ *  Zeming Yao
+ *  Yunjia Zhou
+ *
  */
 public class Main{
 
