@@ -13,6 +13,7 @@ public class World {
     private int white_num;
     private int black_num;
 
+
     public World(){
         /*
             Initialise the system state and load the system initial properties
@@ -29,9 +30,18 @@ public class World {
         }*/
     }
 
-    // Setter for global temperature
+    // Getter for global temperature
     public double getGlobalTemp() {
         return globalTemp;
+    }
+
+    // Getter for daisies
+    public int getWhite_num() {
+        return white_num;
+    }
+
+    public int getBlack_num() {
+        return black_num;
     }
 
     // How state transform to another state
@@ -40,9 +50,6 @@ public class World {
             // Reset the daisy counter
             white_num = 0;
             black_num = 0;
-
-            // Check all the patches, if the daisy on a patch would alive and reproduce
-            checkAlive(patches);
 
             // Calculate the temperature of each patch
             for(int x=0; x< Params.MAX_X ; x++ ){
@@ -57,6 +64,9 @@ public class World {
                     diffuse(x,y,patches);
                 }
             }
+
+            // Check all the patches, if the daisy on a patch would alive and reproduce
+            checkAlive(patches);
 
             // Set the global temperature
             globalTemp = setGlobalTemper(patches);

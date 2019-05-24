@@ -8,9 +8,9 @@
 public class Params {
 
     // The max size of the world
-    static int MAX_X = 11;
+    static int MAX_X = 30;
 
-    static int MAX_Y = 11;
+    static int MAX_Y = 30;
 
     // The albedo of Black daisy
     static double BLACK_ALBEDO = 0.25;
