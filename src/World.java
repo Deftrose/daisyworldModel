@@ -86,7 +86,7 @@ public class World {
             }
 
             //System.out.println(globalTemp);
-            System.out.println(white_num);
+            //System.out.println(white_num);
             //System.out.println(black_num);
         }
 
