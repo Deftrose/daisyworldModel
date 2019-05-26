@@ -7,7 +7,8 @@ public class Daisy {
 
     public enum Color{
         BLACK,
-        WHITE
+        WHITE,
+        YELLOW
     }
 
     // define the color of daisy
@@ -22,10 +23,18 @@ public class Daisy {
     // Constructor
     public Daisy(Color daisyColor, int age) {
         DaisyColor = daisyColor;
-        if( daisyColor == Color.BLACK){
+        /*if( daisyColor == Color.BLACK){
             this.albedo = Params.BLACK_ALBEDO;
         }else{
             this.albedo = Params.WHITE_ALBEDO;
+        }*/
+        switch ( daisyColor ){
+            case BLACK:
+                this.albedo = Params.BLACK_ALBEDO; break;
+            case WHITE:
+                this.albedo = Params.WHITE_ALBEDO; break;
+            case YELLOW:
+                this.albedo = Params.YELLOW_ALBEDO; break;
         }
         this.age = age;
     }

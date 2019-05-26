@@ -18,6 +18,9 @@ public class Params {
     // The albedo of White daisy
     static double WHITE_ALBEDO = 0.75;
 
+    // The albedo of Yellow daisy
+    static double YELLOW_ALBEDO = 0.5;
+
     // The albedo of surface
     static double SUR_ALBEDO = 0.4;
 
@@ -27,11 +30,14 @@ public class Params {
     // The max age of daisy
     static int AGE_MAX = 25;
 
-    // The proportion of initial white daisy, shouldn't over 0.5
+    // The proportion of initial white daisy
     static double WHITE_DAISY = 0.5;
 
-    // The proportion of initial black daisy, shouldn't over 0.5
+    // The proportion of initial black daisy
     static double BLACK_DAISY = 0.5;
+
+    // The proportion of initial yellow daisy
+    static double YELLOW_DAISY = 0;
 
     // Initial patch temperature
     static double INIT_TEMP = 0.0;

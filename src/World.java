@@ -12,6 +12,7 @@ public class World {
     private Patch[][] patches ;
     private int white_num;
     private int black_num;
+    private int yellow_num;
 
 
     public World(){
@@ -44,12 +45,15 @@ public class World {
         return black_num;
     }
 
+    public int getYellow_num() { return yellow_num;}
+
     // How state transform to another state
     public void tick(){
 
             // Reset the daisy counter
             white_num = 0;
             black_num = 0;
+            yellow_num = 0;
 
             // Calculate the temperature of each patch
             for(int x=0; x< Params.MAX_X ; x++ ){
@@ -80,11 +84,14 @@ public class World {
                                 black_num ++; break;
                             case WHITE :
                                 white_num ++; break;
+                            case YELLOW:
+                                yellow_num ++; break;
                         }
                     }
                 }
             }
 
+            //System.out.println(yellow_num);
             //System.out.println(globalTemp);
             //System.out.println(white_num);
             //System.out.println(black_num);
@@ -125,6 +132,17 @@ public class World {
                 tempPatch = patches[temp_x][temp_y];
             }while(tempPatch.getDaisy() != null);
             patches[temp_x][temp_y].setDaisy(new Daisy(Daisy.Color.BLACK,random.nextInt(Params.AGE_MAX)));
+        }
+
+        // plant the yellow daisies
+        for(int i =0; i< ( (int)(Params.YELLOW_DAISY * Params.MAX_X * Params.MAX_Y) ) ; i++){
+            // only plant daisies where there is no daisy
+            do{
+                temp_x = random.nextInt(Params.MAX_X);
+                temp_y = random.nextInt(Params.MAX_Y);
+                tempPatch = patches[temp_x][temp_y];
+            }while(tempPatch.getDaisy() != null);
+            patches[temp_x][temp_y].setDaisy(new Daisy(Daisy.Color.YELLOW,random.nextInt(Params.AGE_MAX)));
         }
     }
 
