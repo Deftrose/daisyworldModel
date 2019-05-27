@@ -7,9 +7,9 @@ import java.io.IOException;
  * Use the preSetting method to preset some parameters and the main method would run the experiment and print it.
  *
  *  Author:
- *  Bowen Bai
- *  Zeming Yao
- *  Yunjia Zhou
+ *  Bowen Bai 969899
+ *  Zeming Yao 962403
+ *  Yunjia Zhou 948447
  *
  */
 public class Main{
@@ -32,12 +32,17 @@ public class Main{
         paraSetting(0.5,0.5,0.6,0.4,0.25,0.75);
         do_exp("exp3", MAX_TIME);
 
-        paraSetting(0.5,0.5,0.8,0.4,0.25,0.75);
-        do_exp_changing("exp4",MAX_TIME);
+        // Set the parameters for extension exp
+        paraSetting_extend(0.3,0.3,0.3,1.4,0.4,0.25,0.75,0.5);
+        do_exp("exp4",MAX_TIME);
 
-        // Set the parameters for exp4 which includes another kind of daisy to the world
+        // Set the parameters for extension exp
         paraSetting_extend(0.3,0.3,0.3,1,0.4,0.25,0.75,0.5);
         do_exp("exp5", MAX_TIME);
+
+        // Set the parameters for extension exp
+        paraSetting_extend(0.3,0.3,0.3,0.6,0.4,0.25,0.75,0.5);
+        do_exp("exp6", MAX_TIME);
     }
 
     /**
